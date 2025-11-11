@@ -1,36 +1,67 @@
-/* ==== Modern Student Management Dashboard ==== */
+/* ==== Modern Portfolio Dashboard Theme ==== */
+:root {
+  --bg-color: #f5f7fa;
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --primary: #4a90e2;
+  --nav-bg: #ffffff;
+}
+
+body.dark-mode {
+  --bg-color: #1c1c1c;
+  --text-color: #f0f0f0;
+  --card-bg: #2b2b2b;
+  --primary: #1e88e5;
+  --nav-bg: #2b2b2b;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f5f7fa;
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 header {
-  background-color: #4a90e2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
   color: white;
-  text-align: center;
-  padding: 1.5rem 0;
+  padding: 1.2rem 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
   margin: 0;
-  font-size: 2rem;
-  letter-spacing: 1px;
+  font-size: 1.6rem;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.2);
 }
 
 nav {
+  background-color: var(--nav-bg);
   display: flex;
   justify-content: center;
-  background-color: #ffffff;
   padding: 0.8rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 nav a {
-  color: #4a90e2;
+  color: var(--primary);
   text-decoration: none;
   font-weight: 600;
   margin: 0 1rem;
@@ -42,66 +73,47 @@ nav a:hover {
 }
 
 .container {
-  max-width: 800px;
-  background: #ffffff;
+  max-width: 900px;
+  background: var(--card-bg);
   margin: 2rem auto;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.5s;
 }
 
 h2 {
   text-align: center;
-  color: #333;
-  margin-bottom: 1.5rem;
+  color: var(--text-color);
 }
 
-form {
+.cards {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
-input[type="text"],
-input[type="number"],
-select {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-button {
-  padding: 0.8rem;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #1a73e8;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-table th,
-table td {
-  border: 1px solid #ddd;
-  padding: 0.8rem;
+.card {
+  background: var(--card-bg);
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-table th {
-  background-color: #f0f4f8;
+.card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(74, 144, 226, 0.1);
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
 }
 
 .footer {
