@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Management System</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <header>
-    <h1>🎓 Student Management System</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/add">Add Student</a>
-      <a href="/view">View Students</a>
-    </nav>
+    <h1>Student Management System</h1>
   </header>
 
-  <section>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/add">Add Student</a>
+    <a href="/view">View Students</a>
+  </nav>
+
+  <div class="container">
     <h2>Welcome!</h2>
     <p>Manage students easily with this simple Flask web app.</p>
-  </section>
+  </div>
+
+  <div class="footer">Made with ❤️ by Tarun</div>
 </body>
 </html>
