@@ -7,12 +7,24 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <header><h2>Add Student</h2></header>
-  <form action="/add" method="POST" class="form-box">
-    <input type="text" name="name" placeholder="Student Name" required>
-    <input type="text" name="department" placeholder="Department" required>
-    <input type="number" name="age" placeholder="Age" required>
-    <button type="submit">Add Student</button>
-  </form>
+  <header>
+    <h1>Add New Student</h1>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/add">Add Student</a>
+    <a href="/view">View Students</a>
+  </nav>
+
+  <div class="container">
+    <h2>Student Registration</h2>
+    <form action="/add" method="POST">
+      <input type="text" name="name" placeholder="Enter student name" required>
+      <input type="text" name="department" placeholder="Enter department" required>
+      <input type="number" name="age" placeholder="Enter age" required>
+      <button type="submit">Add Student</button>
+    </form>
+  </div>
 </body>
 </html>
