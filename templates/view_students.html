@@ -7,19 +7,38 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <header><h2>All Students</h2></header>
-  <table>
-    <tr>
-      <th>ID</th><th>Name</th><th>Department</th><th>Age</th>
-    </tr>
-    {% for student in students %}
-    <tr>
-      <td>{{ student[0] }}</td>
-      <td>{{ student[1] }}</td>
-      <td>{{ student[2] }}</td>
-      <td>{{ student[3] }}</td>
-    </tr>
-    {% endfor %}
-  </table>
+  <header>
+    <h1>View Students</h1>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/add">Add Student</a>
+    <a href="/view">View Students</a>
+  </nav>
+
+  <div class="container">
+    <h2>All Registered Students</h2>
+    {% if students %}
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Age</th>
+      </tr>
+      {% for student in students %}
+      <tr>
+        <td>{{ student[0] }}</td>
+        <td>{{ student[1] }}</td>
+        <td>{{ student[2] }}</td>
+        <td>{{ student[3] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No students added yet.</p>
+    {% endif %}
+  </div>
 </body>
 </html>
